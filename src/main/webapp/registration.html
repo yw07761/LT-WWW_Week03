@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles for the form container */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for Date of Birth container */
+.dob-container {
+    display: flex;
+    gap: 10px; /* Space between inputs */
+}
+
+/* Adjusting input elements in the dob-container */
+.dob-container input {
+    width: 100%;
+    max-width: 80px; /* Limit the width of inputs */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center; /* Center the text */
+}
+
+/* Header style */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* General form styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style for form labels */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Style for form inputs and textareas */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Style for textarea */
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Style for submit button */
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Registration Form</h1>
+        <form action="RegistrationForm" method="post">
+            <label for="fName">First Name:</label>
+            <input type="text" id="fName" name="fName" pattern="[A-Za-z]+" title="First name should contain only letters" required>
+
+            <label for="lName">Last Name:</label>
+            <input type="text" id="lName" name="lName" pattern="[A-Za-z]+" title="Last name should contain only letters" required>
+
+            <label for="day">Date of Birth:</label>
+            <div class="dob-container">
+                <input type="text" id="day" name="day" placeholder="DD" maxlength="2" pattern="0[1-9]|[12][0-9]|3[01]" title="Enter a valid day (01-31)" required>
+                <input type="text" id="month" name="month" placeholder="MM" maxlength="2" pattern="0[1-9]|1[0-2]" title="Enter a valid month (01-12)" required>
+                <input type="text" id="year" name="year" placeholder="YYYY" maxlength="4" pattern="\d{4}" title="Enter a valid year (e.g., 1990)" required>
+            </div>
+
+            <label for="Email">Email:</label>
+            <input type="email" id="Email" name="Email" required>
+
+            <label for="MobileNumber">Mobile Number:</label>
+            <input type="tel" id="MobileNumber" name="MobileNumber" pattern="\d{10}" title="Enter a valid 10-digit mobile number" required>
+
+            <label for="Gender">Gender:</label>
+            <select id="Gender" name="Gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="Address">Address:</label>
+            <textarea id="Address" name="Address" required></textarea>
+
+            <label for="City">City:</label>
+            <input type="text" id="City" name="City" required>
+
+            <label for="PinCode">Pin Code:</label>
+            <input type="text" id="PinCode" name="PinCode" pattern="\d{6}" title="Enter a valid 6-digit pin code" required>
+
+            <label for="State">State:</label>
+            <input type="text" id="State" name="State" required>
+
+            <label for="Country">Country:</label>
+            <input type="text" id="Country" name="Country" required>
+
+            <label for="Hobbies">Hobbies:</label>
+            <input type="text" id="Hobbies" name="Hobbies">
+
+            <label for="Course">Course:</label>
+            <input type="text" id="Course" name="Course">
+
+            <button type="submit" value="save">Register</button>
+        </form>
+    </div>
+</body>
+</html>
